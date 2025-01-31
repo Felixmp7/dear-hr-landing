@@ -1,0 +1,21 @@
+---
+import type { Link } from '@/models/landing.interface';
+
+interface Props {
+    links: Link[];
+    class?: string;
+}
+
+const { links, class: className } = Astro.props;
+const BASE_CLASS = 'flex flex-row w-full justify-center gap-x-14';
+---
+
+<ul class:list={[BASE_CLASS, className]}>
+    {
+        links.map((item) => (
+            <li class="uppercase tracking-wide transition-all ease-in duration-150 hover:scale-110 hover:opacity-80">
+                <a href={item.href}>{item.label}</a>
+            </li>
+        ))
+    }
+</ul>
