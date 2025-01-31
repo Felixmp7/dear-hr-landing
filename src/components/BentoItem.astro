@@ -1,0 +1,43 @@
+---
+interface PropsWithImage {
+    title: string;
+    imageWidth: number;
+    description: string;
+    containerClass: string;
+    h5Class: string;
+    h3Class: string;
+    imageSrc: string;
+    imageClass: string;
+    imageAlt: string;
+}
+interface PropsWithoutImage {
+    title: string;
+    description: string;
+    containerClass: string;
+    h5Class: string;
+    h3Class: string;
+    imageWidth?: never;
+    imageSrc?: never;
+    imageClass?: never;
+    imageAlt?: never;
+}
+type Props = PropsWithImage | PropsWithoutImage;
+
+const { title, description, imageSrc, containerClass, h5Class, imageAlt, imageClass, imageWidth = 450, h3Class } = Astro.props;
+const BASE_STYLES = 'relative p-10 transition-colors rounded-3xl duration-300 group';
+---
+
+<div class:list={[BASE_STYLES, containerClass]}>
+    <h5 class:list={['uppercase tracking-wide group-hover:text-white transition-colors', h5Class]}>{title}</h5>
+    <h3 class:list={['mt-10 group-hover:text-white transition-colors relative z-[1]', h3Class]}>{description}</h3>
+    {
+        !!imageSrc && !!imageClass && !!imageAlt && (
+            <img
+                width={imageWidth}
+                src={imageSrc}
+                alt={imageAlt}
+                class:list={['absolute', imageClass]}
+            />
+        )
+    }
+</div>
