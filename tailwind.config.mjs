@@ -1,15 +1,16 @@
+import { THEME_COLORS } from './src/theme';
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  theme: {
-    extend: {
-      colors: {
-        white: "#FFFFFF",
-        black: "#161925",
-        primary: "#1D4ED8",
-        secondary: "#0C8346",
-      },
+    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
+    theme: {
+        extend: {
+            colors: {
+                white: '#FFFFFF',
+                black: '#161925',
+                ...THEME_COLORS,
+            },
+        },
     },
-  },
-  plugins: [require("tailwind-scrollbar")],
+    plugins: [require('tailwind-scrollbar')],
 };
