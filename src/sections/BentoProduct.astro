@@ -1,0 +1,47 @@
+---
+import BentoItem from '@/components/BentoItem.astro';
+---
+
+<section
+    id="features"
+    class="grid grid-cols-12 grid-rows-2 gap-3 pt-28"
+>
+    <BentoItem
+        imageWidth={450}
+        containerClass="col-span-12 md:col-span-6 lg:col-span-7 lg:row-span-2 hover:bg-primary-500 bg-primary-100"
+        imageSrc="assets/svg/dashboard.svg"
+        imageAlt="Dashboard image"
+        title="Dashboard"
+        h3Class="text-6xl"
+        imageClass="right-10 bottom-4"
+        h5Class="text-primary-800"
+        description="Visualiza fácilmente las próximas ausencias de tu equipo"
+    />
+    <BentoItem
+        imageWidth={250}
+        title="Tiempo Libre Pago"
+        description="Gestiona tiempo libre de forma sencilla"
+        containerClass="col-span-12 md:col-span-6 lg:col-span-5 hover:bg-secondary-500 bg-secondary-100 h-80"
+        imageSrc="assets/svg/pto.svg"
+        h3Class="text-4xl"
+        imageAlt="PTO image"
+        imageClass="right-10 bottom-4"
+        h5Class="text-secondary-800"
+    />
+    <img
+        src="assets/images/anniversaries.webp"
+        alt="Anniversaries"
+        class="rounded-3xl col-span-2 object-cover object-top w-full h-80"
+    />
+    <BentoItem
+        title="Cultura"
+        description="Promueve el aprendizaje cultural en tu empresa"
+        containerClass="col-span-12 md:col-span-6 lg:col-span-3 hover:bg-fifthly-500 bg-fifthly-100 h-80"
+        h3Class="text-2xl"
+        h5Class="text-fifthly-800"
+        imageWidth={150}
+        imageAlt="PTO image"
+        imageSrc="assets/svg/culture.svg"
+        imageClass="left-10 bottom-4"
+    />
+</section>
