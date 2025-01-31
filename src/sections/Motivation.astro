@@ -1,0 +1,63 @@
+---
+import MotivationGrid from '@/components/MotivationGrid.astro';
+import SectionTitle from '@/components/SectionTitle.astro';
+import type { MotivationData } from '@/models/landing.interface';
+
+interface Props {
+    data: MotivationData;
+}
+
+const { data } = Astro.props;
+---
+
+<section
+    id="motivation"
+    class="mb-40 flex flex-col gap-y-16 px-20 pt-28 text-lg"
+>
+    <SectionTitle>
+        {data.title}
+    </SectionTitle>
+    <p class="text-center">
+        {data.description}
+    </p>
+    <MotivationGrid
+        title={data.ptoFeature.title}
+        imageSrc="assets/svg/excel.svg"
+        imageAlt="motivation draw"
+    >
+        <ul class="list-inside list-disc space-y-4">
+            {
+                data.ptoFeature.items.map((item) => (
+                    <li>
+                        <strong>{item.title}:</strong>
+                        <span>{item.description}</span>
+                    </li>
+                ))
+            }
+        </ul>
+    </MotivationGrid>
+    <MotivationGrid
+        title={data.teamCultureFeature.title}
+        imageSrc="assets/svg/team.svg"
+        imageAlt="motivation draw"
+        imageToRight={false}
+    >
+        <div class="text-lg space-y-4">
+            <p>
+                {data.teamCultureFeature.paragraph1}
+            </p>
+            <p>
+                {data.teamCultureFeature.paragraph2}
+            </p>
+            <p>
+                {data.teamCultureFeature.paragraph3}
+            </p>
+            <p>
+                {data.teamCultureFeature.paragraph4}
+            </p>
+            <p>
+                {data.finalParagraph}
+            </p>
+        </div>
+    </MotivationGrid>
+</section>
