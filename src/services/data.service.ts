@@ -1,7 +1,4 @@
-import type { LandingPageData } from "@/config/landing.interface";
-import landingData from "@/data/landing.json";
+import landingData from '@/data/landing.json';
+import type { LandingPageData } from '@/models/landing.interface';
 
-export const getLandingData = async (): Promise<LandingPageData> => {
-  const data: LandingPageData = landingData;
-  return data;
-};
+export const getLandingData = () => landingData as LandingPageData;
