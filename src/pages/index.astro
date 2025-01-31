@@ -1,27 +1,30 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import Adventajes from "@/sections/Adventajes.astro";
-import Brands from "@/sections/Brands.astro";
-import Footer from "@/sections/Footer.astro";
-import Header from "@/sections/Header.astro";
-import Hero from "@/sections/Hero.astro";
-import Pricing from "@/sections/Pricing.astro";
-import Services from "@/sections/Services.astro";
-import { getLandingData } from "@/services/data.service";
+import Layout from '@/layouts/Layout.astro';
+import Benefits from '@/sections/Benefits.astro';
+import BentoProduct from '@/sections/BentoProduct.astro';
+import Footer from '@/sections/Footer.astro';
+import Header from '@/sections/Header.astro';
+import Hero from '@/sections/Hero.astro';
+import Motivation from '@/sections/Motivation.astro';
+import { getLandingData } from '@/services/data.service';
 
-const data = await getLandingData();
+const data = getLandingData();
 ---
 
 <Layout meta={data.meta}>
-  <Header data={data.headerData} />
-  <main class="flex flex-col justify-center items-center">
-    <div class="w-3/4">
-      <Hero data={data.heroData} />
-      <Services data={data.servicesData} />
-      <Adventajes data={data.adventajesData} />
-      <Brands data={data.brandsData} />
-      <Pricing data={data.pricingData} />
-    </div>
-    <Footer data={data.footerData} />
-  </main>
+    <Header
+        logo={data.logo}
+        links={data.links}
+    />
+    <main class="container mx-auto">
+        <Hero data={data.heroData} />
+        <BentoProduct />
+        <Benefits data={data.advantagesData} />
+        <Motivation data={data.motivationData} />
+    </main>
+    <hr />
+    <Footer
+        logo={data.logo}
+        links={data.links}
+    />
 </Layout>
