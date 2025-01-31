@@ -1,46 +1,17 @@
 ---
-import Action from "@/components/Action.astro";
-import Icon from "@/components/Icon.astro";
-import type { FooterData, Icon as IconType } from "@/config/landing.interface";
+import Links from '@/components/Links.astro';
+import type { Link } from '@/models/landing.interface';
 
 interface Props {
-  data: FooterData;
+    links: Link[];
+    logo: string;
 }
 
-const { data } = Astro.props;
+const { logo, links } = Astro.props;
 ---
 
-<footer
-  class="flex flex-col justify-center text-center gap-y-8 pt-8 bg-black text-white w-full"
->
-  <section>
-    <Action as="a" type="text" class="text-xl md:text-2xl" href="/">
-      {data.logo}
-    </Action>
-  </section>
-  <section>
-    <p class="md:text-lg">
-      {data.description}
-    </p>
-  </section>
-  <section
-    class="flex flex-row flex-wrap justify-center gap-x-3 px-4 md:px-0 md:text-xl"
-  >
-    {
-      data.links.map((link) => (
-        <Action as="a" type="text" href={link.href}>
-          {link.label}
-        </Action>
-      ))
-    }
-  </section>
-  <section class="mb-5 flex flex-row flex-wrap justify-center gap-x-3">
-    {
-      data.socials.map((social) => (
-        <Action as="a" type="icon" href={social.href} title={social.icon}>
-          <Icon icon={social.icon as IconType} />
-        </Action>
-      ))
-    }
-  </section>
+<footer class="flex flex-col justify-center text-center gap-y-10 py-8 w-full bg-white bg-[radial-gradient(100%_100%_at_50%_100%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]">
+    <a href="#">{logo}</a>
+    <Links links={links} />
+    <span>&copy; {new Date().getFullYear()} Todos los derechos reservados</span>
 </footer>
