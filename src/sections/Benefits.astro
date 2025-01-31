@@ -1,0 +1,31 @@
+---
+import SectionTitle from '@/components/SectionTitle.astro';
+import SideBySide from '@/components/SideBySide.astro';
+import type { AdvantagesData } from '@/models/landing.interface';
+
+interface Props {
+    data: AdvantagesData;
+}
+
+const { data } = Astro.props;
+---
+
+<section
+    id="benefits"
+    class="flex flex-col mb-20 gap-y-28 pt-28"
+>
+    <SectionTitle>
+        {data.title}
+    </SectionTitle>
+    <main>
+        <SideBySide
+            data={data.advantages[0]}
+            iconClassName="bg-primary-500"
+        />
+        <SideBySide
+            data={data.advantages[1]}
+            iconClassName="bg-fifthly-400"
+            reversed
+        />
+    </main>
+</section>
