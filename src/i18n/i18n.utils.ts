@@ -1,5 +1,5 @@
 import metaLdJson from '@/data/metaLd.json';
-import { ui } from './ui';
+import { ui } from './strings.translations';
 
 const DEFAULT_LANG = 'es';
 

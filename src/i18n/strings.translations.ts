@@ -1,8 +1,3 @@
-export const languages = {
-    es: 'Spanish',
-    en: 'English',
-};
-
 export const ui = {
     es: {
         'meta.description': 'Empresa que ofrece una herramienta para simplificar y gestionar temas de recursos humanos y tiempo libre en tu equipo.',
