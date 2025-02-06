@@ -1,28 +1,24 @@
 ---
 import Background from '@/components/Background.astro';
-import type { Meta } from '@/models/landing.interface';
+import { getLangFromUrl, getMetaLdJson, useTranslations } from '@/i18n/i18n.utils';
 import '@fontsource-variable/rubik';
 
-interface Props {
-    meta: Meta;
-}
-
-const { meta } = Astro.props;
-
-const ldJson = JSON.stringify(meta.ldJson);
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const ldJson = getMetaLdJson(lang);
 ---
 
 <!doctype html>
 <html
     class="scrollbar-thin scrollbar-thumb-fuscous-gray-300 scrollbar-track-transparent scroll-smooth"
-    lang={meta.lang ?? 'es'}
+    lang={lang}
 >
     <head>
-        <meta charset={meta.charset ?? 'UTF-8'} />
-        <title>{meta.title}</title>
+        <meta charset="UTF-8" />
+        <title>Dear HR</title>
         <meta
             name="description"
-            content={meta.description}
+            content={t('meta.description')}
         />
         <meta
             name="viewport"
