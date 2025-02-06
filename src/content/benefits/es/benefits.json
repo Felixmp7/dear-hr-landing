@@ -1,0 +1,19 @@
+{
+    "title": "Agiliza tus procesos y aprovecha mejor tu tiempo: Descubre los Beneficios Clave",
+    "benefits": [
+        {
+            "title": "Planifica tu tiempo libre",
+            "description": "Organiza tus días libres, PTO y feriados de manera eficiente y sin complicaciones. Con Dear HR, puedes visualizar fácilmente tus días disponibles, solicitar vacaciones y recibir notificaciones sobre el estado de tus solicitudes.",
+            "img": "assets/svg/date-picker.svg",
+            "imageAlt": "Esta es una imagen sobre los beneficios del tiempo libre",
+            "checks": ["Simple", "Rápido", "Eficiente"]
+        },
+        {
+            "title": "Mejora la cultura laboral",
+            "description": "Conoce mejor a tus compañeros y fomenta conexiones significativas en tu equipo. Descubre detalles importantes sobre tus colegas, celebra logros y fechas especiales, y crea un ambiente laboral más humano y conectado.",
+            "img": "assets/svg/team-collaboration.svg",
+            "imageAlt": "Esta es una imagen sobre la mejora de la cultura laboral",
+            "checks": ["Conoce", "Recuerda", "Conecta"]
+        }
+    ]
+}

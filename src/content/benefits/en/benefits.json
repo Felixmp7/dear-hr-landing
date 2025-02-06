@@ -1,0 +1,19 @@
+{
+    "title": "Streamline your processes and make better use of your time: Discover the Key Benefits",
+    "benefits": [
+        {
+            "title": "Plan your time off",
+            "description": "Organize your days off, PTO, and holidays efficiently and hassle-free. With Dear HR, you can easily view your available days, request vacations, and receive notifications about the status of your requests.",
+            "img": "assets/svg/date-picker.svg",
+            "imageAlt": "This is an image about the benefits of time off",
+            "checks": ["Simple", "Fast", "Efficient"]
+        },
+        {
+            "title": "Improve work culture",
+            "description": "Get to know your colleagues better and foster meaningful connections within your team. Discover important details about your colleagues, celebrate achievements and special dates, and create a more human and connected work environment.",
+            "img": "assets/svg/team-collaboration.svg",
+            "imageAlt": "This is an image about improving work culture",
+            "checks": ["Know", "Remember", "Connect"]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "title": "La motivación detrás de Dear HR",
+    "description": "La idea de crear Dear HR nació de mi propia experiencia en el entorno laboral. A lo largo de mi carrera, siempre que interactuaba con procesos relacionados con Recursos Humanos, me encontraba con frustraciones y obstáculos que hacían que todo pareciera innecesariamente complicado.",
+    "ptoFeature": {
+        "title": "Paid Time Off (PTO) y Dias Festivos",
+        "items": [
+            { "title": "El famoso Excel", "description": "Dependíamos de interminables hojas de Excel que, además de ser confusas, no siempre estaban actualizadas y elegir un día libre implicaba revisar minuciosamente para evitar coincidir con compañeros clave del equipo." },
+            { "title": "Falta de claridad", "description": "No sabía cuántos días de vacaciones me quedaban, cuántos días de PTO había tomado o cuántos días festivos tenía disponibles." },
+            { "title": "Procesos manuales", "description": "Tenía que enviar correos electrónicos o completar formularios y revisar constantemente el correo esperando aprobaciones de mis solicitudes, lo que consumía mucho tiempo y energía." },
+            { "title": "Confusión en el equipo", "description": "Mis compañeros de trabajo también tenían problemas para gestionar sus días libres, lo que a menudo resultaba en conflictos de programación y malentendidos." }
+        ]
+    },
+    "teamCultureFeature": {
+        "title": "Cultura de equipo",
+        "paragraph1": "Quería fomentar conexiones más significativas entre los miembros del equipo, ya que no existía una forma sencilla de conocer mejor a las personas con las que compartía tanto tiempo cada día.",
+        "paragraph2": "Ignoraba detalles importantes como los días festivos que celebraban en sus países, sus aniversarios laborales, sus cumpleaños o incluso qué rol desempeñaban en la empresa. Todo esto hacía que la conexión como equipo fuese prácticamente inexistente.",
+        "paragraph3": "Además, sentía que el reconocimiento y el aprecio por el trabajo bien hecho eran escasos en el entorno laboral. Quería crear un ambiente donde los logros fueran celebrados y los esfuerzos reconocidos de manera significativa.",
+        "paragraph4": "El bienestar y el equilibrio entre el trabajo y la vida personal eran aspectos que quería promover en el entorno laboral. Creía que un equipo feliz y saludable era fundamental para el éxito de la empresa."
+    },
+    "finalParagraph": "Estas frustraciones y deseos de mejorar la experiencia laboral me llevaron a crear Dear HR, una plataforma que simplifica la gestión de vacaciones, PTO, días festivos y fomenta conexiones significativas entre los miembros del equipo. Con Dear HR, espero que las empresas y los empleados puedan disfrutar de una cultura laboral más humana, eficiente y conectada."
+}
