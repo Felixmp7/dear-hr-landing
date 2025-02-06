@@ -1,34 +1,31 @@
 ---
 import SendIcon from '@/components/icons/SendIcon.astro';
-import type { HeroData } from '@/models/landing.interface';
+import { getLangFromUrl, useTranslations } from '@/i18n/i18n.utils';
 
-interface Props {
-    data: HeroData;
-}
-
-const { data } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="flex justify-center pt-48 h-screen">
     <div class="md:w-1/2">
         <h1 class="text-4xl text-center font-semibold md:text-6xl">
-            {data.title}
-            <span class="text-tertiary-500"> {data.highlightedTitle} </span>
+            {t('hero.title')}
+            <span class="text-tertiary-500"> {t('hero.highlightedTitle')} </span>
         </h1>
         <h2 class="mt-10 text-lg text-center opacity-80 md:text-2xl">
-            {data.subTitle}
+            {t('hero.subTitle')}
         </h2>
         <div class="flex flex-col gap-1 items-center text-gray-500 mt-5">
-            <span>{data.waitListQuestion}</span>
-            <span>{data.waitListMessage}</span>
+            <span>{t('hero.waitListQuestion')}</span>
+            <span>{t('hero.waitListMessage')}</span>
             <div class="flex gap-4 items-center mt-5">
                 <input
                     type="email"
                     class="border border-black p-2 rounded-md mx-auto w-80"
-                    placeholder={data.waitListPlaceholder}
+                    placeholder={t('hero.waitListPlaceholder')}
                 />
                 <button class="flex items-center justify-center bg-tertiary-500 text-white rounded-md px-4 py-2 gap-2">
-                    <span>Enviar</span>
+                    <span>{t('hero.waitListButton')}</span>
                     <SendIcon
                         width={20}
                         height={20}

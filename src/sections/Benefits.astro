@@ -1,13 +1,12 @@
 ---
+import { getEntry } from 'astro:content';
+
 import SectionTitle from '@/components/SectionTitle.astro';
 import SideBySide from '@/components/SideBySide.astro';
-import type { AdvantagesData } from '@/models/landing.interface';
+import { getLangFromUrl } from '@/i18n/i18n.utils';
 
-interface Props {
-    data: AdvantagesData;
-}
-
-const { data } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const benefitsCollection = await getEntry('benefits', `${lang}/benefits`);
 ---
 
 <section
@@ -15,15 +14,15 @@ const { data } = Astro.props;
     class="flex flex-col mb-20 gap-y-28 pt-28"
 >
     <SectionTitle>
-        {data.title}
+        {benefitsCollection.data.title}
     </SectionTitle>
     <main>
         <SideBySide
-            data={data.advantages[0]}
+            data={benefitsCollection.data.benefits[0]}
             iconClassName="bg-primary-500"
         />
         <SideBySide
-            data={data.advantages[1]}
+            data={benefitsCollection.data.benefits[1]}
             iconClassName="bg-fifthly-400"
             reversed
         />

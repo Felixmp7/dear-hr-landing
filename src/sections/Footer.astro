@@ -1,17 +1,12 @@
 ---
 import Links from '@/components/Links.astro';
-import type { Link } from '@/models/landing.interface';
+import { getLangFromUrl, useTranslations } from '@/i18n/i18n.utils';
 
-interface Props {
-    links: Link[];
-    logo: string;
-}
-
-const { logo, links } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer class="flex flex-col justify-center text-center gap-y-10 py-8 w-full bg-white bg-[radial-gradient(100%_100%_at_50%_100%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]">
-    <a href="#">{logo}</a>
-    <Links links={links} />
-    <span>&copy; {new Date().getFullYear()} Todos los derechos reservados</span>
+    <Links />
+    <span>{t('footer.rightsReserved')}</span>
 </footer>

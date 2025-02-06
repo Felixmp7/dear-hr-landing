@@ -1,13 +1,5 @@
 ---
 import Links from '@/components/Links.astro';
-import type { Link } from '@/models/landing.interface';
-
-interface Props {
-    logo: string;
-    links: Link[];
-}
-
-const { logo, links } = Astro.props;
 ---
 
 <header
@@ -18,13 +10,7 @@ const { logo, links } = Astro.props;
         aria-label="Main Navigation"
         class="flex flex-row items-center w-3/4 relative"
     >
-        <a
-            class="text-nowrap absolute left-0"
-            href="#"
-        >
-            {logo}
-        </a>
-        <Links links={links} />
+        <Links />
     </nav>
 </header>
 

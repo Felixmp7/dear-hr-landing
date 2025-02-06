@@ -1,13 +1,11 @@
 ---
 import MotivationGrid from '@/components/MotivationGrid.astro';
 import SectionTitle from '@/components/SectionTitle.astro';
-import type { MotivationData } from '@/models/landing.interface';
+import { getLangFromUrl } from '@/i18n/i18n.utils';
+import { getEntry } from 'astro:content';
 
-interface Props {
-    data: MotivationData;
-}
-
-const { data } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const motivationCollection = await getEntry('motivation', `${lang}/motivation`);
 ---
 
 <section
@@ -15,19 +13,19 @@ const { data } = Astro.props;
     class="mb-40 flex flex-col gap-y-16 px-20 pt-28 text-lg"
 >
     <SectionTitle>
-        {data.title}
+        {motivationCollection.data.title}
     </SectionTitle>
     <p class="text-center">
-        {data.description}
+        {motivationCollection.data.description}
     </p>
     <MotivationGrid
-        title={data.ptoFeature.title}
+        title={motivationCollection.data.ptoFeature.title}
         imageSrc="assets/svg/excel.svg"
         imageAlt="motivation draw"
     >
         <ul class="list-inside list-disc space-y-4">
             {
-                data.ptoFeature.items.map((item) => (
+                motivationCollection.data.ptoFeature.items.map((item) => (
                     <li>
                         <strong>{item.title}:</strong>
                         <span>{item.description}</span>
@@ -37,26 +35,26 @@ const { data } = Astro.props;
         </ul>
     </MotivationGrid>
     <MotivationGrid
-        title={data.teamCultureFeature.title}
+        title={motivationCollection.data.teamCultureFeature.title}
         imageSrc="assets/svg/team.svg"
         imageAlt="motivation draw"
         imageToRight={false}
     >
         <div class="text-lg space-y-4">
             <p>
-                {data.teamCultureFeature.paragraph1}
+                {motivationCollection.data.teamCultureFeature.paragraph1}
             </p>
             <p>
-                {data.teamCultureFeature.paragraph2}
+                {motivationCollection.data.teamCultureFeature.paragraph2}
             </p>
             <p>
-                {data.teamCultureFeature.paragraph3}
+                {motivationCollection.data.teamCultureFeature.paragraph3}
             </p>
             <p>
-                {data.teamCultureFeature.paragraph4}
+                {motivationCollection.data.teamCultureFeature.paragraph4}
             </p>
             <p>
-                {data.finalParagraph}
+                {motivationCollection.data.finalParagraph}
             </p>
         </div>
     </MotivationGrid>
