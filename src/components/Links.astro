@@ -4,9 +4,10 @@ import Link from './Link.astro';
 
 interface Props {
     class?: string;
+    showLanguagesPicker?: boolean;
 }
 
-const { class: className } = Astro.props;
+const { class: className, showLanguagesPicker = false } = Astro.props;
 const BASE_CLASS = 'flex flex-row w-full justify-center gap-x-14';
 
 const lang = getLangFromUrl(Astro.url);
@@ -30,4 +31,18 @@ const t = useTranslations(lang);
         label={t('nav.motivation')}
         href="#motivation"
     />
+    {
+        showLanguagesPicker && (
+            <>
+                <Link
+                    label={t('nav.languages.es')}
+                    href="/"
+                />
+                <Link
+                    label={t('nav.languages.en')}
+                    href="/en"
+                />
+            </>
+        )
+    }
 </ul>
