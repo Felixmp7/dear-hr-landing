@@ -1,0 +1,30 @@
+{
+    "es": {
+        "@context": "http://dear-hr.com",
+        "@type": "Organization",
+        "name": "Dear HR",
+        "description": "Empresa que ofrece una herramienta para simplificar y gestionar temas de recursos humanos y tiempo libre en tu equipo.",
+        "url": "https://dear-hr.com",
+        "logo": "./public/favicon.svg",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "dear-hr.support@dear-hr.com",
+            "contactType": "Client Service"
+        },
+        "sameAs": ["https://www.twitter.com/yourpage", "https://www.instagram.com/yourpage", "https://www.linkedin.com/company/yourpage"]
+    },
+    "en": {
+        "@context": "http://dear-hr.com",
+        "@type": "Organization",
+        "name": "Dear HR",
+        "description": "Company that offers a tool to simplify and manage human resources and free time issues in your team.",
+        "url": "https://dear-hr.com",
+        "logo": "./public/favicon.svg",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "dear-hr.support@dear-hr.com",
+            "contactType": "Client Service"
+        },
+        "sameAs": ["https://www.twitter.com/yourpage", "https://www.instagram.com/yourpage", "https://www.linkedin.com/company/yourpage"]
+    }
+}
