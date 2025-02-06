@@ -8,4 +8,8 @@ import robotsTxt from 'astro-robots-txt';
 export default defineConfig({
     site: 'http://localhost:4321',
     integrations: [tailwind(), sitemap(), robotsTxt()],
+    i18n: {
+        locales: ['en', 'es'],
+        defaultLocale: 'es',
+    },
 });
