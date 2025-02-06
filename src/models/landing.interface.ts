@@ -6,8 +6,6 @@ export interface LandingPageData {
     featuresData: FeaturesData;
     motivationData: MotivationData;
     advantagesData: AdvantagesData;
-    brandsData: BrandsData;
-    pricingData: PricingData;
 }
 export interface HeroData {
     title: string;
@@ -64,41 +62,6 @@ export interface Link {
     href: string;
 }
 
-export interface Social {
-    icon: string;
-    href: string;
-}
-
-export interface BrandsData {
-    title: string;
-    description: string;
-    brands: Brand[];
-}
-
-export interface Brand {
-    label: string;
-    icon: string;
-    href: string;
-}
-
-export interface PricingData {
-    title: string;
-    tiers: Tier[];
-}
-
-export interface Tier {
-    title: string;
-    description: string;
-    price: Price;
-    features: string[];
-    cta: string;
-}
-
-export interface Price {
-    amount: string;
-    period?: string;
-}
-
 export interface Meta {
     title: string;
     description: string;
@@ -121,5 +84,3 @@ export interface LdJson {
     };
     sameAs: string[];
 }
-
-export type Icon = 'DevIcon' | 'FileIcon' | 'PlanetIcon' | 'ConfigIcon' | 'CheckIcon' | 'InstagramIcon' | 'GithubIcon' | 'TwitterIcon' | 'FacebookIcon' | 'ReactIcon' | 'SvelteIcon' | 'SolidIcon' | 'VueIcon' | 'VercelIcon' | 'NetlifyIcon';
