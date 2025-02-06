@@ -34,6 +34,7 @@ const ldJson = getMetaLdJson(lang);
             href={import.meta.env.SITE}
         />
         <script
+            is:inline
             type="application/ld+json"
             set:html={ldJson}
         />

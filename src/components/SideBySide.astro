@@ -1,10 +1,15 @@
 ---
 import IconWrapper from '@/components/IconWrapper.astro';
-import type { Advantage } from '@/models/landing.interface';
 import CheckIcon from './icons/CheckIcon.astro';
 
 interface Props {
-    data: Advantage;
+    data: {
+        title: string;
+        img: string;
+        imageAlt: string;
+        description: string;
+        checks: string[];
+    };
     iconClassName?: string;
     reversed?: boolean;
 }
