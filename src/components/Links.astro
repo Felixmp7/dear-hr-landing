@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { class: className, showLanguagesPicker = false } = Astro.props;
-const BASE_CLASS = 'flex flex-row w-full justify-center gap-x-14';
+const BASE_CLASS = 'flex flex-row w-full items-center justify-center gap-x-14';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -18,6 +18,7 @@ const t = useTranslations(lang);
     <Link
         href="#"
         label="Dear HR"
+        class="mr-auto"
     />
     <Link
         label={t('nav.features')}
@@ -33,16 +34,23 @@ const t = useTranslations(lang);
     />
     {
         showLanguagesPicker && (
-            <>
-                <Link
-                    label={t('nav.languages.es')}
+            <li class="ml-auto px-4 py-2 text-sm font-light text-fuscous-gray-400">
+                <a
                     href="/"
-                />
-                <Link
-                    label={t('nav.languages.en')}
+                    data-active={lang === 'es'}
+                    class="data-[active]:font-bold mr-1"
+                >
+                    {t('nav.languages.es')}
+                </a>
+                |
+                <a
                     href="/en"
-                />
-            </>
+                    data-active={lang === 'en'}
+                    class="data-[active]:font-bold ml-1"
+                >
+                    {t('nav.languages.en')}
+                </a>
+            </li>
         )
     }
 </ul>

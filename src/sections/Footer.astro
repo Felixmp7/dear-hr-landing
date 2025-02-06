@@ -6,7 +6,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="flex flex-col justify-center text-center gap-y-10 py-8 w-full bg-white bg-[radial-gradient(100%_100%_at_50%_100%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]">
+<footer class="flex flex-col justify-center text-center gap-y-10 py-8 bg-white bg-[radial-gradient(100%_100%_at_50%_100%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] w-3/4 container mx-auto">
     <Links />
     <span>{t('footer.rightsReserved')}</span>
 </footer>
