@@ -1,7 +1,6 @@
 ---
 interface PropsWithImage {
     title: string;
-    imageWidth: number;
     description: string;
     containerClass: string;
     h5Class: string;
@@ -16,14 +15,13 @@ interface PropsWithoutImage {
     containerClass: string;
     h5Class: string;
     h3Class: string;
-    imageWidth?: never;
     imageSrc?: never;
     imageClass?: never;
     imageAlt?: never;
 }
 type Props = PropsWithImage | PropsWithoutImage;
 
-const { title, description, imageSrc, containerClass, h5Class, imageAlt, imageClass, imageWidth = 450, h3Class } = Astro.props;
+const { title, description, imageSrc, containerClass, h5Class, imageAlt, imageClass, h3Class } = Astro.props;
 const BASE_STYLES = 'relative p-10 transition-colors rounded-3xl duration-300 group';
 ---
 
@@ -33,7 +31,6 @@ const BASE_STYLES = 'relative p-10 transition-colors rounded-3xl duration-300 gr
     {
         !!imageSrc && !!imageClass && !!imageAlt && (
             <img
-                width={imageWidth}
                 src={imageSrc}
                 alt={imageAlt}
                 class:list={['absolute', imageClass]}
