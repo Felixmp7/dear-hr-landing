@@ -1,13 +1,14 @@
 ---
 import SendIcon from '@/components/icons/SendIcon.astro';
 import { getLangFromUrl, useTranslations } from '@/i18n/i18n.utils';
+import { actions } from 'astro:actions';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <section class="flex justify-center pt-48 h-screen">
-    <div class="md:w-1/2">
+    <div class="w-full md:w-5/6 lg:w-2/3">
         <h1 class="text-4xl text-center font-semibold md:text-6xl">
             {t('hero.title')}
             <span class="text-tertiary-500"> {t('hero.highlightedTitle')} </span>
@@ -15,27 +16,36 @@ const t = useTranslations(lang);
         <h2 class="mt-10 text-lg text-center opacity-80 md:text-2xl">
             {t('hero.subTitle')}
         </h2>
-        <div class="flex flex-col gap-1 items-center text-gray-500 mt-5">
+        <div class="flex flex-col gap-1 text-center items-center text-gray-500 mt-5">
             <span>{t('hero.waitListQuestion')}</span>
             <span>{t('hero.waitListMessage')}</span>
-            <div class="flex gap-4 items-center mt-5">
+            <form
+                class="flex flex-col sm:flex-row gap-4 items-center mt-5"
+                method="POST"
+                action={actions.send}
+            >
                 <input
+                    id="email"
+                    name="email"
                     type="email"
                     class="border border-black p-2 rounded-md mx-auto w-80"
                     placeholder={t('hero.waitListPlaceholder')}
                 />
-                <button class="flex items-center justify-center bg-tertiary-500 text-white rounded-md px-4 py-2 gap-2">
+                <button
+                    type="submit"
+                    class="w-full sm:w-auto flex items-center justify-center bg-tertiary-500 text-white rounded-md px-4 py-2 gap-2"
+                >
                     <span>{t('hero.waitListButton')}</span>
                     <SendIcon
                         width={20}
                         height={20}
                     />
                 </button>
-            </div>
+            </form>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center mt-10 md:mt-20">
             <a
-                class="flex justify-center items-center animate-bounce border-2 border-transparent bg-tertiary-500 text-white rounded-full w-14 h-14 mt-32 hover:bg-white hover:text-tertiary-500 hover:border-tertiary-500 transition"
+                class="flex justify-center items-center animate-bounce border-2 border-transparent bg-tertiary-500 text-white rounded-full w-14 h-14 hover:bg-white hover:text-tertiary-500 hover:border-tertiary-500 transition"
                 href="#features"
                 title="arrow down icon"
             >
@@ -57,6 +67,38 @@ const t = useTranslations(lang);
         </div>
     </div>
 </section>
+
+<script>
+    const form = document.querySelector('form');
+    const emailInput = document.querySelector('input[name="email"]') as HTMLInputElement;
+    const submitButton = document.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+    form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (!emailInput?.value) return;
+        console.log(submitButton);
+
+        submitButton.disabled = true;
+        setTimeout(() => {
+            alert('Correo enviado correctamente');
+            submitButton.disabled = false;
+        }, 10_000);
+
+        // fetch(form.action, {
+        //     method: 'POST',
+        //     body: new FormData(form),
+        // })
+        //     .then((res) => res.json())
+        //     .then(() => {
+        //         alert('Correo enviado correctamente');
+        //     })
+        //     .catch((err) => {
+        //         console.error(err);
+        //         submitButton.disabled = false;
+        //     });
+    });
+</script>
 
 <style>
     @keyframes fadeIn {
