@@ -36,7 +36,7 @@ export const ui = {
         'hero.subTitle': 'Empower your team with the ideal tools for a more human and efficient work culture.',
         'hero.waitListQuestion': 'Do you want to be one of the first to use our platform?',
         'hero.waitListMessage': 'Leave us your email and we will notify you when we are ready to start.',
-        'hero.waitListPlaceholder': "I'm interested@.com",
+        'hero.waitListPlaceholder': 'interested@.com',
         'hero.waitListButton': 'Sign me up',
         'features.dashboard.title': 'DASHBOARD',
         'features.dashboard.description': 'Easily view your team’s upcoming absences.',
