@@ -11,20 +11,18 @@ const benefitsCollection = await getEntry('benefits', `${lang}/benefits`);
 
 <section
     id="benefits"
-    class="flex flex-col mb-20 gap-y-28 pt-28"
+    class="flex flex-col mb-20 gap-y-10 sm:gap-y-28 pt-28"
 >
     <SectionTitle>
-        {benefitsCollection.data.title}
+        {benefitsCollection?.data.title}
     </SectionTitle>
-    <main>
-        <SideBySide
-            data={benefitsCollection.data.benefits[0]}
-            iconClassName="bg-primary-500"
-        />
-        <SideBySide
-            data={benefitsCollection.data.benefits[1]}
-            iconClassName="bg-fifthly-400"
-            reversed
-        />
-    </main>
+    <SideBySide
+        data={benefitsCollection!.data.benefits[0]}
+        iconClassName="bg-primary-500"
+    />
+    <SideBySide
+        data={benefitsCollection!.data.benefits[1]}
+        iconClassName="bg-fifthly-400"
+        reversed
+    />
 </section>
