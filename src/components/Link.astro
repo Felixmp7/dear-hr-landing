@@ -6,9 +6,12 @@ interface Props {
 }
 
 const { href, label, class: className } = Astro.props;
-const baseClass = '"uppercase tracking-wide transition-all ease-in duration-150 hover:scale-110 hover:opacity-80"';
+const baseClass = 'text-xs md:text-sm uppercase tracking-wide transition-all ease-in duration-150 hover:scale-110 hover:opacity-80';
 ---
 
-<li class:list={[baseClass, className]}>
-    <a href={href}>{label}</a>
-</li>
+<a
+    class:list={[baseClass, className]}
+    href={href}
+>
+    {label}
+</a>
