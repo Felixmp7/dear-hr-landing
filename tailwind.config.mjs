@@ -10,6 +10,9 @@ export default {
                 black: '#161925',
                 ...THEME_COLORS,
             },
+            screens: {
+                xs: '420px',
+            },
         },
     },
     plugins: [require('tailwind-scrollbar')],

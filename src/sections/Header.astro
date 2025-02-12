@@ -1,16 +1,62 @@
 ---
-import Links from '@/components/Links.astro';
+import Link from '@/components/Link.astro';
+import { getLangFromUrl, useTranslations } from '@/i18n/i18n.utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header
     id="navbar"
-    class="w-full transition duration-300 top-0 fixed z-50"
+    class="w-full transition duration-300 top-0 fixed z-50 p-5"
 >
     <nav
         aria-label="Main Navigation"
-        class="flex flex-row items-center container mx-auto p-5 md:px-0"
+        class="container mx-auto"
     >
-        <Links showLanguagesPicker />
+        <ul class="flex w-full pb-12 xs:pb-0 justify-center xs:justify-normal items-center gap-x-6 md:gap-x-14 relative">
+            <li class="absolute top-12 mr-auto xs:static min-w-fit inline-flex flex-col items-center">
+                <Link
+                    href="#"
+                    label="Dear HR"
+                />
+                <div class="text-[10px] sm:text-xs font-light text-fuscous-gray-400 min-w-fit">
+                    <a
+                        href="/"
+                        data-active={lang === 'es' ? 'true' : 'false'}
+                        class="data-[active=true]:font-bold mr-1"
+                    >
+                        {t('nav.languages.es')}
+                    </a>
+                    |
+                    <a
+                        href="/en"
+                        data-active={lang === 'en' ? 'true' : 'false'}
+                        class="data-[active=true]:font-bold ml-1"
+                    >
+                        {t('nav.languages.en')}
+                    </a>
+                </div>
+            </li>
+            <li>
+                <Link
+                    label={t('nav.features')}
+                    href="#features"
+                />
+            </li>
+            <li>
+                <Link
+                    label={t('nav.benefits')}
+                    href="#benefits"
+                />
+            </li>
+            <li>
+                <Link
+                    label={t('nav.motivation')}
+                    href="#motivation"
+                />
+            </li>
+        </ul>
     </nav>
 </header>
 

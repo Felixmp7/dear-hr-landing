@@ -1,12 +1,11 @@
 ---
-import Links from '@/components/Links.astro';
 import { getLangFromUrl, useTranslations } from '@/i18n/i18n.utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="flex flex-col justify-center text-center gap-y-10 py-8 bg-white bg-[radial-gradient(100%_100%_at_50%_100%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] w-3/4 container mx-auto">
-    <Links />
-    <span class="text-sm sm:text-base">{t('footer.rightsReserved')}</span>
+<footer class="flex flex-col justify-center text-center gap-y-5 py-8 bg-white bg-[radial-gradient(100%_100%_at_50%_100%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] container mx-auto text-sm sm:text-base text-fuscous-gray-500">
+    <span>{t('footer.powered')} <strong>Felix Pacheco</strong></span>
+    <span class="">{t('footer.rightsReserved')}</span>
 </footer>
