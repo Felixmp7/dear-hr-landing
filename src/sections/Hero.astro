@@ -21,7 +21,7 @@ const t = useTranslations(lang);
             <span class="text-sm md:text-base">{t('hero.waitListQuestion')}</span>
             <span class="text-sm md:text-base">{t('hero.waitListMessage')}</span>
             <form
-                class="flex flex-col sm:flex-row gap-4 items-center mt-5 text-sm sm:text-base"
+                class="flex flex-col sm:flex-row gap-4 items-center mt-5 text-sm sm:text-base w-full"
                 method="POST"
                 action={actions.send}
             >
@@ -29,7 +29,7 @@ const t = useTranslations(lang);
                     id="email"
                     name="email"
                     type="email"
-                    class="border border-fuscous-gray-200 p-2 rounded-md mx-auto w-80"
+                    class="border border-fuscous-gray-200 p-2 rounded-md mx-auto w-full"
                     placeholder={t('hero.waitListPlaceholder')}
                 />
                 <button
