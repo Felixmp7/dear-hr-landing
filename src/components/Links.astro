@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { class: className, showLanguagesPicker = false } = Astro.props;
-const BASE_CLASS = 'flex flex-row w-full items-center gap-x-6 md:gap-x-14';
+const BASE_CLASS = 'flex  w-full items-center gap-x-6 md:gap-x-14';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -22,7 +22,7 @@ const t = useTranslations(lang);
         />
         {
             showLanguagesPicker && (
-                <div class="text-xs font-light text-fuscous-gray-400 min-w-fit">
+                <div class="text-[10px] sm:text-xs font-light text-fuscous-gray-400 min-w-fit">
                     <a
                         href="/"
                         data-active={lang === 'es' ? 'true' : 'false'}
