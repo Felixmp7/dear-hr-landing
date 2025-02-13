@@ -1,8 +1,9 @@
 ---
+import { getEntry } from 'astro:content';
+
 import MotivationGrid from '@/components/MotivationGrid.astro';
 import SectionTitle from '@/components/SectionTitle.astro';
 import { getLangFromUrl } from '@/i18n/i18n.utils';
-import { getEntry } from 'astro:content';
 
 const lang = getLangFromUrl(Astro.url);
 const motivationCollection = await getEntry('motivation', `${lang}/motivation`);
