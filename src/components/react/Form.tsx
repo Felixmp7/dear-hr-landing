@@ -2,8 +2,8 @@ import { actions } from 'astro:actions';
 import { z } from 'astro:schema';
 import { useState, type FormEvent } from 'react';
 
-import { getLangFromUrl, useTranslations } from '@/i18n/i18n.utils';
-import { SendIcon } from './icons/SendIcon';
+import { useTranslations } from '@/hooks/useTranslation';
+import { SendIcon } from '../icons/SendIcon';
 
 const fetchEmail = async (formData: FormData) => {
     try {
@@ -17,10 +17,9 @@ const fetchEmail = async (formData: FormData) => {
 
 const validateEmail = (email: string) => z.string().email().safeParse(email);
 
-export const Form = () => {
+export const Form = ({ lang }: { lang: 'es' | 'en' }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | undefined>();
-    const lang = getLangFromUrl(new URL(window.location.href));
     const t = useTranslations(lang);
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
