@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Benefits from '@/sections/Benefits.astro';
-import Features from '@/sections/Features.astro';
+import { Features } from '@/sections/Features';
 import Footer from '@/sections/Footer.astro';
 import Header from '@/sections/Header.astro';
 import Hero from '@/sections/Hero.astro';
@@ -12,7 +12,10 @@ import Motivation from '@/sections/Motivation.astro';
     <Header />
     <main class="container mx-auto px-5">
         <Hero />
-        <Features />
+        <Features
+            url={Astro.url}
+            client:only
+        />
         <Benefits />
         <Motivation />
     </main>
