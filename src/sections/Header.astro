@@ -1,6 +1,7 @@
 ---
 import Link from '@/components/Link.astro';
-import { getLangFromUrl, useTranslations } from '@/i18n/i18n.utils';
+import { useTranslations } from '@/hooks/useTranslation';
+import { getLangFromUrl } from '@/i18n/i18n.utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

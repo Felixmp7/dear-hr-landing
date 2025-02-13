@@ -1,6 +1,7 @@
 ---
 import Background from '@/components/Background.astro';
-import { getLangFromUrl, getMetaLdJson, useTranslations } from '@/i18n/i18n.utils';
+import { useTranslations } from '@/hooks/useTranslation';
+import { getLangFromUrl, getMetaLdJson } from '@/i18n/i18n.utils';
 import '@fontsource-variable/rubik';
 
 const lang = getLangFromUrl(Astro.url);
