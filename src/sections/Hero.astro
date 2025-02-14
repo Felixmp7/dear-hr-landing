@@ -1,12 +1,17 @@
 ---
-import { Form } from '@/components/Form';
-import { getLangFromUrl, useTranslations } from '@/i18n/i18n.utils';
+import ArrowDownIcon from '@/components/icons/ArrowDownIcon.astro';
+import { Form } from '@/components/react/Form';
+import { useTranslations } from '@/hooks/useTranslation';
+import { getLangFromUrl } from '@/i18n/i18n.utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class="flex justify-center pt-48 h-screen">
+<section
+    id="hero-section"
+    class="flex justify-center pt-48 h-screen"
+>
     <div class="w-full md:w-5/6 lg:w-1/2">
         <h1 class="text-3xl sm:text-4xl text-center font-semibold md:text-6xl">
             {t('hero.title')}
@@ -15,27 +20,17 @@ const t = useTranslations(lang);
         <h2 class="mt-10 text-lg text-center opacity-80 md:text-2xl">
             {t('hero.subTitle')}
         </h2>
-        <Form client:only />
+        <Form
+            client:only
+            lang={lang}
+        />
         <div class="flex justify-center mt-10 md:mt-20">
             <a
                 class="flex justify-center items-center animate-bounce border-2 border-transparent bg-tertiary-500 text-white rounded-full w-14 h-14 hover:bg-white hover:text-tertiary-500 hover:border-tertiary-500 transition"
                 href="#features"
                 title="arrow down icon"
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-8 h-8"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
-                    ></path>
-                </svg>
+                <ArrowDownIcon />
             </a>
         </div>
     </div>
@@ -50,7 +45,6 @@ const t = useTranslations(lang);
             opacity: 1;
         }
     }
-
     #hero-section {
         opacity: 0;
         animation: fadeIn 0.8s ease-in-out forwards;
