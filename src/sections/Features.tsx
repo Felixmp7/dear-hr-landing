@@ -1,5 +1,6 @@
 import { DashboardIcon } from '@/components/react/DashboardIcon';
 import { FeatureButton } from '@/components/react/FeatureButton';
+import { FeatureListItem } from '@/components/react/FeatureListItem';
 import { PaidTimeOffIcon } from '@/components/react/PaidTimeOffIcon';
 import { UnavailableIcon } from '@/components/react/UnavailableIcon';
 import { UserSquareIcon } from '@/components/react/UserSquareIcon';
@@ -22,7 +23,7 @@ export const Features = ({ url }: { url: URL }) => {
             <h2 className="text-xl sm:text-2xl text-center md:text-5xl font-semibold mb-10 sm:mb-20">{t('nav.features')}</h2>
             <div className="flex flex-col-reverse items-center gap-10 md:gap-20 lg:grid lg:grid-flow-col lg:gap-32">
                 <ul className="lg:w-96 flex lg:grid lg:grid-cols-2 gap-5 sm:gap-10 lg:place-items-center">
-                    <li className="flex flex-col items-center gap-y-4">
+                    <FeatureListItem>
                         <FeatureButton
                             isActive={featureSelected === 'dashboard'}
                             title={t('features.dashboard.title')}
@@ -31,8 +32,8 @@ export const Features = ({ url }: { url: URL }) => {
                         >
                             <DashboardIcon className="w-3 h-3 sm:w-5 sm:h-5 md:w-auto md:h-auto" />
                         </FeatureButton>
-                    </li>
-                    <li className="flex flex-col items-center gap-y-4">
+                    </FeatureListItem>
+                    <FeatureListItem>
                         <FeatureButton
                             isActive={featureSelected === 'pto'}
                             title={t('features.pto.title')}
@@ -41,8 +42,8 @@ export const Features = ({ url }: { url: URL }) => {
                         >
                             <PaidTimeOffIcon className="w-3 h-3 sm:w-5 sm:h-5 md:w-auto md:h-auto" />
                         </FeatureButton>
-                    </li>
-                    <li className="flex flex-col items-center gap-y-4">
+                    </FeatureListItem>
+                    <FeatureListItem>
                         <FeatureButton
                             isActive={featureSelected === 'team-members'}
                             title={t('features.team-members.title')}
@@ -54,8 +55,8 @@ export const Features = ({ url }: { url: URL }) => {
                                 className="w-3 h-3 sm:w-5 sm:h-5 md:w-auto md:h-auto"
                             />
                         </FeatureButton>
-                    </li>
-                    <li className="flex flex-col items-center gap-y-4">
+                    </FeatureListItem>
+                    <FeatureListItem>
                         <FeatureButton
                             isActive={featureSelected === 'absences'}
                             title={t('features.absences.title')}
@@ -64,7 +65,7 @@ export const Features = ({ url }: { url: URL }) => {
                         >
                             <UnavailableIcon className="w-3 h-3 sm:w-5 sm:h-5 md:w-auto md:h-auto" />
                         </FeatureButton>
-                    </li>
+                    </FeatureListItem>
                 </ul>
                 <aside className="rounded-lg overflow-hidden border border-fuscous-gray-100">
                     <header className="h-40 sm:h-60 md:h-72 overflow-auto scrollbar-thin scrollbar-thumb-fuscous-gray-300 scrollbar-track-transparent scroll-smooth">
