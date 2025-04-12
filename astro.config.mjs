@@ -1,22 +1,16 @@
-import node from '@astrojs/node';
+import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
+import vercel from '@astrojs/vercel';
+import robotsTxt from 'astro-robots-txt';
 import { defineConfig } from 'astro/config';
 
-import robotsTxt from 'astro-robots-txt';
-
-import react from '@astrojs/react';
-
-// https://astro.build/config
 export default defineConfig({
-    site: 'http://localhost:4321',
     output: 'server',
     integrations: [tailwind(), sitemap(), robotsTxt(), react()],
+    adapter: vercel(),
     i18n: {
         locales: ['en', 'es'],
         defaultLocale: 'es',
     },
-    adapter: node({
-        mode: 'standalone',
-    }),
 });
