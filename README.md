@@ -1,45 +1,51 @@
 ![image](https://github.com/JimmyCamus/luna-landing/assets/86853554/7dc4c571-bb33-4e55-ae94-446b056539a0)
 
+# Dear HR Landing
 
-
-
-# Luna Landing
-
-Luna Landing is an innovative and highly customizable landing page that allows you to create and modify your website easily and quickly through a JSON file. Harnessing the power of Astro, a modern and efficient web development tool, Luna Landing provides you with an unparalleled development experience, enabling you to focus on your site's design and content without worrying about the complexity of code.
+Dear HR Landing is a modern and customizable landing page designed for the Dear HR application. The platform focuses on managing PTO (Paid Time Off) and free time within your organization, offering a seamless user experience and intuitive design.
 
 ## Key Features
 
-- Extreme Customization: With Luna Landing, you can customize every aspect of your website, from design to content, using a simple JSON file. Easily change colors, fonts, images, and text without the need for manual code editing.
+- **Streamlined PTO Management**: Showcase the features and benefits of the Dear HR application, making it easier for companies to manage employee time-off requests and schedules.
+  
+- **Highly Customizable Design**: Built using Astro and Tailwind CSS, this landing page allows you to easily tailor design elements to match your branding.
 
-- Efficiency and Speed: Thanks to Astro, Luna Landing delivers fast load times and exceptional performance, ensuring a smooth and uninterrupted user experience.
+- **Performance and Speed**: Thanks to Astro's framework, Dear HR Landing ensures fast load times and exceptional performance for an uninterrupted user experience.
 
-- Total Adaptability: With support for mobile devices and various screen resolutions, Luna Landing ensures your website looks and functions flawlessly on any device, from smartphones to desktop computers.
+- **Responsive and Mobile-Ready**: Fully optimized for various screen sizes and devices, ensuring accessibility and usability on smartphones, tablets, and desktops.
 
-- Scalability and Simplified Maintenance: As your project grows, Luna Landing enables you to scale your website efficiently and seamlessly. Content management via a JSON file makes updating and ongoing maintenance of your website easy.
+- **Scalability and Maintenance**: The project is structured for easy updates and scalability as the Dear HR application evolves.
 
 ## Get Started
 
-Start building your dream website with Luna Landing today! Download our template and discover the freedom and flexibility it offers to create a unique and captivating website.
+Start setting up your Dear HR Landing page today to enhance your company's PTO and free-time management process. Follow the steps below to deploy the project locally.
 
 ### Prerequisites
 
-```sh
-npm install -g pnpm
-```
+Before starting, ensure you have [npm](https://www.npmjs.com/) installed.
 
 ### Install dependencies
 
+Run the following command to install all required dependencies:
+
 ```sh
-pnpm i
+npm install
 ```
 
 ### Run the project
 
+To start the development server, use:
+
 ```sh
-pnpm dev
+npm run dev
 ```
 
 ## 🛠️ Stack
-- Astro - The web framework for content-driven websites.
-- Typescript - JavaScript with syntax for types.
-- Tailwind CSS - A utility-first CSS framework for rapidly building custom designs.
+
+- **Astro**: The web framework for content-driven websites.
+- **TypeScript**: A superset of JavaScript that adds static typing.
+- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
+
+---
+
+Dear HR Landing is the perfect starting point for companies seeking an elegant and efficient way to introduce their PTO management application. Customize and scale effortlessly to meet your organizational needs!
