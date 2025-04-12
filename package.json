@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/node": "^9.0.2",
     "@astrojs/react": "^4.2.0",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^6.0.0",
+    "@astrojs/vercel": "^8.0.4",
     "@fontsource-variable/rubik": "^5.0.21",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
