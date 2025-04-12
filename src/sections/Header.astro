@@ -2,6 +2,7 @@
 import Link from '@/components/Link.astro';
 import { useTranslations } from '@/hooks/useTranslation';
 import { getLangFromUrl } from '@/i18n/i18n.utils';
+import { Image } from 'astro:assets';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -16,11 +17,19 @@ const t = useTranslations(lang);
         class="container mx-auto"
     >
         <ul class="flex w-full pb-12 xs:pb-0 justify-center xs:justify-normal items-center gap-x-6 md:gap-x-14 relative">
-            <li class="absolute top-12 mr-auto xs:static min-w-fit inline-flex flex-col items-center">
-                <Link
-                    href="#"
-                    label="Dear HR"
-                />
+            <li class="absolute top-12 mr-auto xs:static min-w-fit inline-flex gap-1 flex-col items-center">
+                <a
+                    href="/"
+                    class="flex items-center text-sm gap-2"
+                >
+                    <Image
+                        src="/assets/svg/dear-hr-logo.svg"
+                        alt="Dear HR Logo"
+                        width={23}
+                        height={23}
+                    />
+                    <span>Dear HR</span>
+                </a>
                 <div class="text-[10px] sm:text-xs font-light text-fuscous-gray-400 min-w-fit">
                     <a
                         href="/"
