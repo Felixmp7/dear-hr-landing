@@ -16,8 +16,8 @@ const t = useTranslations(lang);
         aria-label="Main Navigation"
         class="container mx-auto"
     >
-        <ul class="flex w-full pb-12 xs:pb-0 justify-center xs:justify-normal items-center gap-x-6 md:gap-x-14 relative">
-            <li class="absolute top-12 mr-auto xs:static min-w-fit inline-flex gap-1 flex-col items-center">
+        <div class="flex flex-col justify-center items-center gap-6 xs:flex-row xs:justify-between">
+            <div class="min-w-fit inline-flex gap-1 flex-col items-center">
                 <a
                     href="/"
                     class="flex items-center text-sm gap-2"
@@ -47,26 +47,28 @@ const t = useTranslations(lang);
                         {t('nav.languages.en')}
                     </a>
                 </div>
-            </li>
-            <li>
-                <Link
+            </div>
+            <ul class="flex gap-6 items-center">
+                <li>
+                    <Link
                     label={t('nav.features')}
                     href="#features"
-                />
-            </li>
-            <li>
-                <Link
+                    />
+                </li>
+                <li>
+                    <Link
                     label={t('nav.benefits')}
                     href="#benefits"
-                />
-            </li>
-            <li>
-                <Link
+                    />
+                </li>
+                <li>
+                    <Link
                     label={t('nav.motivation')}
                     href="#motivation"
-                />
-            </li>
-        </ul>
+                    />
+                </li>
+            </ul>
+        </div>
     </nav>
 </header>
 
