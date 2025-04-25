@@ -22,7 +22,7 @@ export const Features = ({ url }: { url: URL }) => {
         >
             <h2 className="text-xl sm:text-2xl text-center md:text-5xl font-semibold mb-10 sm:mb-20">{t('nav.features')}</h2>
             <div className="flex flex-col-reverse items-center gap-10 md:gap-20 lg:grid lg:grid-flow-col lg:gap-32">
-                <ul className="lg:w-96 flex lg:grid lg:grid-cols-2 gap-5 sm:gap-10 lg:place-items-center">
+                <ul className="lg:w-96 grid sm:flex lg:grid grid-cols-2 gap-5 sm:gap-10 lg:place-items-center">
                     <FeatureListItem>
                         <FeatureButton
                             isActive={featureSelected === 'dashboard'}
